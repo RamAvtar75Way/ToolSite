@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button, Input, Label } from "@/components/ui";
 import { Copy } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 type Style = "APA" | "MLA" | "Chicago";
 
@@ -74,7 +75,7 @@ export function CitationGenerator() {
                 <h3 className="font-semibold text-lg">Result ({style})</h3>
                 {result ? (
                     <div className="p-4 bg-muted rounded-lg relative group">
-                        <div className="pr-10 leading-relaxed" dangerouslySetInnerHTML={{ __html: result }} />
+                        <div className="pr-12 leading-relaxed" dangerouslySetInnerHTML={{ __html: result }} />
                         <Button
                             size="icon"
                             variant="ghost"
@@ -82,7 +83,7 @@ export function CitationGenerator() {
                             onClick={() => {
                                 const temp = document.createElement("div");
                                 temp.innerHTML = result;
-                                navigator.clipboard.writeText(temp.textContent || temp.innerText || "");
+                                copyToClipboard(temp.textContent || temp.innerText || "");
                             }}
                         >
                             <Copy className="h-4 w-4" />

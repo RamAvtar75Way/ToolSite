@@ -3,13 +3,14 @@
 import { useState } from "react";
 import { Button, Textarea } from "@/components/ui";
 import { Copy, Trash2, CheckCircle2 } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function DuplicateLineRemover() {
     const [text, setText] = useState("");
     const [removedCount, setRemovedCount] = useState<number | null>(null);
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(text);
+        copyToClipboard(text);
     };
 
     const handleClear = () => {
@@ -56,7 +57,7 @@ export function DuplicateLineRemover() {
                         setRemovedCount(null);
                     }}
                     placeholder="Paste your list here..."
-                    className="min-h-[300px] p-4 text-base resize-y font-mono whitespace-pre"
+                    className="min-h-[300px] p-4 pr-24 text-base resize-y font-mono whitespace-pre"
                 />
                 <div className="text-right text-sm text-muted-foreground mt-2">
                     Total Lines: {text ? text.split("\n").length : 0}

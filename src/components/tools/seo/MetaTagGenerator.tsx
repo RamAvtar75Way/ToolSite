@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button, Input, Textarea, Label } from "@/components/ui";
 import { Copy, RefreshCw } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function MetaTagGenerator() {
     const [formData, setFormData] = useState({
@@ -100,7 +101,7 @@ export function MetaTagGenerator() {
             <div className="space-y-4">
                 <div className="flex justify-between items-center">
                     <h3 className="font-semibold text-lg">Generated HTML</h3>
-                    <Button size="sm" onClick={() => navigator.clipboard.writeText(generatedCode)} disabled={!generatedCode}>
+                    <Button size="sm" onClick={() => copyToClipboard(generatedCode)} disabled={!generatedCode}>
                         <Copy className="mr-2 h-4 w-4" /> Copy Code
                     </Button>
                 </div>

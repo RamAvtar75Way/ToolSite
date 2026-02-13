@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button, Input, Textarea, Label } from "@/components/ui";
 import { Copy } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 type SchemaType = "Article" | "Product" | "FAQPage" | "LocalBusiness";
 
@@ -153,7 +154,7 @@ export function SchemaGenerator() {
             <div className="space-y-4">
                 <div className="flex justify-between items-center">
                     <h3 className="font-semibold text-lg">Result</h3>
-                    <Button size="sm" onClick={() => navigator.clipboard.writeText(output)} disabled={!output}>
+                    <Button size="sm" onClick={() => copyToClipboard(output)} disabled={!output}>
                         <Copy className="mr-2 h-4 w-4" /> Copy Script
                     </Button>
                 </div>

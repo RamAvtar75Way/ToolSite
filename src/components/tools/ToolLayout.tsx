@@ -8,7 +8,7 @@ interface ToolLayoutProps {
 
 export function ToolLayout({ tool, children }: ToolLayoutProps) {
     return (
-        <div className="container py-10">
+        <div className="container py-10 mx-auto">
             <div className="mx-auto max-w-4xl space-y-8">
                 <div className="space-y-4 text-center">
                     <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">

@@ -3,12 +3,13 @@
 import { useState } from "react";
 import { Button, Textarea } from "@/components/ui";
 import { Copy, Trash2, Eraser } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function RemoveExtraSpaces() {
     const [text, setText] = useState("");
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(text);
+        copyToClipboard(text);
     };
 
     const handleClear = () => {
@@ -50,7 +51,7 @@ export function RemoveExtraSpaces() {
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     placeholder="Paste your text with extra spaces here..."
-                    className="min-h-[300px] p-4 text-base resize-y"
+                    className="min-h-[300px] p-4 pr-24 text-base resize-y"
                 />
             </div>
         </div>

@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { Button, Input } from "@/components/ui";
 import { ImageUploader } from "./ImageUploader";
 import { Copy } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function ColorPicker() {
     const [imageUrl, setImageUrl] = useState<string | null>(null);
@@ -94,7 +95,7 @@ export function ColorPicker() {
                                 <label className="text-sm font-medium">HEX</label>
                                 <div className="flex gap-2">
                                     <Input value={color} readOnly />
-                                    <Button size="icon" onClick={() => navigator.clipboard.writeText(color)}>
+                                    <Button size="icon" onClick={() => copyToClipboard(color)}>
                                         <Copy className="h-4 w-4" />
                                     </Button>
                                 </div>
@@ -103,7 +104,7 @@ export function ColorPicker() {
                                 <label className="text-sm font-medium">RGB</label>
                                 <div className="flex gap-2">
                                     <Input value={rgb} readOnly />
-                                    <Button size="icon" onClick={() => navigator.clipboard.writeText(rgb)}>
+                                    <Button size="icon" onClick={() => copyToClipboard(rgb)}>
                                         <Copy className="h-4 w-4" />
                                     </Button>
                                 </div>

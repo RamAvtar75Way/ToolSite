@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button, Label, Input } from "@/components/ui";
 import { Copy, RefreshCw } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function PasswordGenerator() {
     const [length, setLength] = useState(16);
@@ -33,14 +34,14 @@ export function PasswordGenerator() {
     return (
         <div className="max-w-xl mx-auto space-y-8">
             <div className="relative">
-                <div className="p-6 bg-muted rounded-xl text-center break-all font-mono text-xl min-h-[80px] flex items-center justify-center">
+                <div className="p-6 pr-12 bg-muted rounded-xl text-center break-all font-mono text-xl min-h-[80px] flex items-center justify-center">
                     {password || "Click Generate"}
                 </div>
                 <Button
                     size="icon"
                     variant="ghost"
                     className="absolute top-2 right-2"
-                    onClick={() => navigator.clipboard.writeText(password)}
+                    onClick={() => copyToClipboard(password)}
                     disabled={!password}
                 >
                     <Copy className="h-4 w-4" />

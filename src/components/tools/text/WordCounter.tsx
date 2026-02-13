@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import { Button, Textarea, Card, CardContent } from "@/components/ui";
 import { Copy, Trash2 } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function WordCounter() {
     const [text, setText] = useState("");
@@ -20,7 +21,7 @@ export function WordCounter() {
     }, [text]);
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(text);
+        copyToClipboard(text);
     };
 
     const handleClear = () => {
@@ -49,7 +50,7 @@ export function WordCounter() {
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     placeholder="Type or paste your text here..."
-                    className="min-h-[300px] p-4 text-base resize-y"
+                    className="min-h-[300px] p-4 pr-24 text-base resize-y"
                 />
             </div>
         </div>

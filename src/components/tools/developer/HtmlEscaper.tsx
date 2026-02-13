@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button, Textarea } from "@/components/ui";
 import { Copy, Trash2, ArrowRightLeft } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function HtmlEscaper() {
     const [text, setText] = useState("");
@@ -41,7 +42,7 @@ export function HtmlEscaper() {
     };
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(result);
+        copyToClipboard(result);
     };
 
     const handleClear = () => {
@@ -79,7 +80,7 @@ export function HtmlEscaper() {
                             value={text}
                             onChange={(e) => handleChange(e.target.value)}
                             placeholder={isEscaping ? "<div>Hello</div>" : "&lt;div&gt;Hello&lt;/div&gt;"}
-                            className="min-h-[300px] font-mono p-4"
+                            className="min-h-[300px] font-mono p-4 pr-12"
                         />
                         <div className="absolute top-2 right-2">
                             <Button variant="ghost" size="sm" onClick={handleClear}>
@@ -96,7 +97,7 @@ export function HtmlEscaper() {
                             value={result}
                             readOnly
                             placeholder="Result..."
-                            className="min-h-[300px] font-mono p-4 bg-muted"
+                            className="min-h-[300px] font-mono p-4 pr-12 bg-muted"
                         />
                         <div className="absolute top-2 right-2">
                             <Button variant="ghost" size="sm" onClick={handleCopy}>

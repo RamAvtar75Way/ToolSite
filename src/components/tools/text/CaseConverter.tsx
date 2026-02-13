@@ -3,12 +3,13 @@
 import { useState } from "react";
 import { Button, Textarea, Card, CardContent } from "@/components/ui";
 import { Copy, Trash2, ArrowRight } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function CaseConverter() {
     const [text, setText] = useState("");
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(text);
+        copyToClipboard(text);
     };
 
     const handleClear = () => {
@@ -68,7 +69,7 @@ export function CaseConverter() {
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     placeholder="Type or paste your text here to convert..."
-                    className="min-h-[300px] p-4 text-base resize-y font-mono"
+                    className="min-h-[300px] p-4 pr-24 text-base resize-y font-mono"
                 />
             </div>
         </div>

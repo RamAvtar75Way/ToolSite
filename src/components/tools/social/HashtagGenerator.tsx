@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button, Input, Label } from "@/components/ui";
 import { Copy } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function HashtagGenerator() {
     const [keyword, setKeyword] = useState("");
@@ -74,7 +75,7 @@ export function HashtagGenerator() {
                     </div>
 
                     <div className="flex gap-4">
-                        <Button variant="outline" className="w-full" onClick={() => navigator.clipboard.writeText(hashtags.join(" "))}>
+                        <Button variant="outline" className="w-full" onClick={() => copyToClipboard(hashtags.join(" "))}>
                             <Copy className="mr-2 h-4 w-4" /> Copy All
                         </Button>
                     </div>

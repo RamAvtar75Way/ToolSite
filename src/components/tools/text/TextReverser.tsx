@@ -3,12 +3,13 @@
 import { useState } from "react";
 import { Button, Textarea } from "@/components/ui";
 import { Copy, Trash2, ArrowLeftRight } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function TextReverser() {
     const [text, setText] = useState("");
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(text);
+        copyToClipboard(text);
     };
 
     const handleClear = () => {
@@ -48,7 +49,7 @@ export function TextReverser() {
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     placeholder="Type here to reverse..."
-                    className="min-h-[300px] p-4 text-base resize-y"
+                    className="min-h-[300px] p-4 pr-24 text-base resize-y"
                 />
             </div>
         </div>

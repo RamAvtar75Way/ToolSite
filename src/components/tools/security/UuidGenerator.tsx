@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button, Input, Label } from "@/components/ui";
 import { Copy, RefreshCw } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function UuidGenerator() {
     const [uuid, setUuid] = useState("");
@@ -44,7 +45,7 @@ export function UuidGenerator() {
                         <div className="p-6 border rounded-xl bg-card shadow-sm text-center">
                             <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-2">Your UUID</div>
                             <div className="text-3xl font-mono font-bold text-primary break-all">{uuid}</div>
-                            <Button variant="ghost" className="mt-4" onClick={() => navigator.clipboard.writeText(uuid)}>
+                            <Button variant="ghost" className="mt-4" onClick={() => copyToClipboard(uuid)}>
                                 <Copy className="mr-2 h-4 w-4" /> Copy
                             </Button>
                         </div>
@@ -54,7 +55,7 @@ export function UuidGenerator() {
                                 <div key={i} className="flex gap-2 items-center font-mono text-sm p-2 hover:bg-muted rounded text-xs md:text-sm">
                                     <span className="text-muted-foreground w-6 text-right">{i + 1}.</span>
                                     <span className="flex-1 break-all">{id}</span>
-                                    <Button size="icon" variant="ghost" className="h-6 w-6" onClick={() => navigator.clipboard.writeText(id)}>
+                                    <Button size="icon" variant="ghost" className="h-6 w-6" onClick={() => copyToClipboard(id)}>
                                         <Copy className="h-3 w-3" />
                                     </Button>
                                 </div>
@@ -62,7 +63,7 @@ export function UuidGenerator() {
                         </div>
                     )}
                     {uuids.length > 1 && (
-                        <Button variant="outline" className="w-full" onClick={() => navigator.clipboard.writeText(uuids.join("\n"))}>
+                        <Button variant="outline" className="w-full" onClick={() => copyToClipboard(uuids.join("\n"))}>
                             <Copy className="mr-2 h-4 w-4" /> Copy All
                         </Button>
                     )}

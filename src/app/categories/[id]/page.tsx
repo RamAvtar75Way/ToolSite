@@ -40,7 +40,7 @@ export default async function CategoryPage({ params }: PageProps) {
     const categoryTools = tools.filter((t) => t.category === id);
 
     return (
-        <div className="container py-10">
+        <div className="container py-10 mx-auto">
             <div className="flex flex-col items-center gap-4 text-center mb-10">
                 <h1 className="text-3xl font-bold tracking-tighter md:text-5xl">{category.name}</h1>
                 <p className="max-w-[700px] text-lg text-muted-foreground">
@@ -49,7 +49,7 @@ export default async function CategoryPage({ params }: PageProps) {
             </div>
 
             {categoryTools.length > 0 ? (
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {categoryTools.map((tool) => (
                         <ToolCard key={tool.slug} tool={tool} />
                     ))}

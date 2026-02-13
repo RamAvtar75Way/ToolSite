@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button, Textarea, Card, CardContent } from "@/components/ui";
 import { Copy, Trash2 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, copyToClipboard } from "@/lib/utils";
 
 const SOCIAL_LIMITS = [
     { name: "Twitter (X)", limit: 280 },
@@ -17,7 +17,7 @@ export function CharacterCounter() {
     const [text, setText] = useState("");
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(text);
+        copyToClipboard(text);
     };
 
     const handleClear = () => {
@@ -57,7 +57,7 @@ export function CharacterCounter() {
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     placeholder="Type or paste your text here..."
-                    className="min-h-[300px] p-4 text-base resize-y"
+                    className="min-h-[300px] p-4 pr-24 text-base resize-y"
                 />
                 <div className="text-right text-sm text-muted-foreground mt-2">
                     Total Characters: {text.length} | Total Words: {text.trim() ? text.trim().split(/\s+/).length : 0}

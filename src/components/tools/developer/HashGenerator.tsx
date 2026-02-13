@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button, Input, Label, Textarea } from "@/components/ui";
 import { Copy } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function HashGenerator() {
     const [text, setText] = useState("");
@@ -49,7 +50,7 @@ export function HashGenerator() {
                     <Label>SHA-1</Label>
                     <div className="flex gap-2">
                         <Input value={hashes.sha1} readOnly className="font-mono bg-muted" />
-                        <Button size="icon" onClick={() => navigator.clipboard.writeText(hashes.sha1)}>
+                        <Button size="icon" onClick={() => copyToClipboard(hashes.sha1)}>
                             <Copy className="h-4 w-4" />
                         </Button>
                     </div>
@@ -58,7 +59,7 @@ export function HashGenerator() {
                     <Label>SHA-256</Label>
                     <div className="flex gap-2">
                         <Input value={hashes.sha256} readOnly className="font-mono bg-muted" />
-                        <Button size="icon" onClick={() => navigator.clipboard.writeText(hashes.sha256)}>
+                        <Button size="icon" onClick={() => copyToClipboard(hashes.sha256)}>
                             <Copy className="h-4 w-4" />
                         </Button>
                     </div>

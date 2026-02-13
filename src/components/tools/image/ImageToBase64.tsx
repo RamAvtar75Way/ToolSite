@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button, Textarea } from "@/components/ui";
 import { ImageUploader } from "./ImageUploader";
 import { Copy } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function ImageToBase64() {
     const [imageUrl, setImageUrl] = useState<string | null>(null);
@@ -30,7 +31,7 @@ export function ImageToBase64() {
                 <div className="space-y-2">
                     <div className="flex justify-between items-center">
                         <label className="text-sm font-medium">Base64 Output</label>
-                        <Button size="sm" onClick={() => navigator.clipboard.writeText(base64)}>
+                        <Button size="sm" onClick={() => copyToClipboard(base64)}>
                             <Copy className="mr-2 h-4 w-4" /> Copy Base64
                         </Button>
                     </div>

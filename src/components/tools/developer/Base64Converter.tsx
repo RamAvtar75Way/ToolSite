@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button, Textarea } from "@/components/ui";
 import { Copy, Trash2, ArrowRightLeft } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function Base64Converter() {
     const [text, setText] = useState("");
@@ -12,7 +13,7 @@ export function Base64Converter() {
         // Logic would be to copy the result, but since I am using one input for "source" and transforming it...
         // wait, usually a converter has Input -> Output.
         // Let's do Input -> Result.
-        navigator.clipboard.writeText(result);
+        copyToClipboard(result);
     };
 
     const [result, setResult] = useState("");
@@ -87,7 +88,7 @@ export function Base64Converter() {
                             value={text}
                             onChange={(e) => handleChange(e.target.value)}
                             placeholder={isEncoding ? "Type text here..." : "Paste Base64 here..."}
-                            className="min-h-[300px] font-mono p-4"
+                            className="min-h-[300px] font-mono p-4 pr-12"
                         />
                         <div className="absolute top-2 right-2">
                             <Button variant="ghost" size="sm" onClick={handleClear}>
@@ -104,7 +105,7 @@ export function Base64Converter() {
                             value={result}
                             readOnly
                             placeholder="Result..."
-                            className="min-h-[300px] font-mono p-4 bg-muted"
+                            className="min-h-[300px] font-mono p-4 pr-12 bg-muted"
                         />
                         <div className="absolute top-2 right-2">
                             <Button variant="ghost" size="sm" onClick={handleCopy}>

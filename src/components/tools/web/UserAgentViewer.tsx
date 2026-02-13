@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button, Textarea } from "@/components/ui";
 import { Copy } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function UserAgentViewer() {
     const [ua, setUa] = useState("");
@@ -22,7 +23,7 @@ export function UserAgentViewer() {
                 </div>
                 <Button
                     variant="outline"
-                    onClick={() => navigator.clipboard.writeText(ua)}
+                    onClick={() => copyToClipboard(ua)}
                     disabled={!ua}
                     className="w-full"
                 >

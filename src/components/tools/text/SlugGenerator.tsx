@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button, Input, Label } from "@/components/ui"; // Note: Label might need to be added to ui/index.tsx
 import { Copy, Trash2, ArrowRight } from "lucide-react";
+import { copyToClipboard } from "@/lib/utils";
 
 export function SlugGenerator() {
     const [text, setText] = useState("");
@@ -20,7 +21,7 @@ export function SlugGenerator() {
     };
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(slug);
+        copyToClipboard(slug);
     };
 
     return (
