@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button, Label } from "@/components/ui";
 
 const availableTimezones = [
-    "UTC", "America/New_York", "America/Los_Angeles", "Europe/London", "Asia/Tokyo", "Asia/Dubai", "Australia/Sydney"
+    "UTC", "America/New_York", "America/Los_Angeles", "Europe/London", "Asia/Tokyo", "Asia/Dubai", "Asia/Kolkata", "Australia/Sydney"
 ];
 
 export function MeetingTimeFinder() {
