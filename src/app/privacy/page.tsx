@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Privacy Policy - Multi-Domain Tool Site",
+    title: "Privacy Policy - Tool4You",
     description: "Read our privacy policy to understand how we handle your data.",
 };
 
@@ -17,7 +17,7 @@ export default function PrivacyPage() {
                 <div className="prose dark:prose-invert mx-auto max-w-none text-foreground prose-headings:text-foreground prose-p:text-foreground prose-li:text-foreground prose-strong:text-foreground">
                     <h2>1. Introduction</h2>
                     <p>
-                        Welcome to Multi-Domain Tool Site. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
+                        Welcome to Tool4You. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
                     </p>
 
                     <h2>2. Data We Collect</h2>
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
 
                     <h2>5. Contact Us</h2>
                     <p>
-                        If you have any questions about this privacy policy or our privacy practices, please contact us at support@toolsite.com.
+                        If you have any questions about this privacy policy or our privacy practices, please contact us at ramavtar.crb@gmail.com.
                     </p>
                 </div>
             </div>

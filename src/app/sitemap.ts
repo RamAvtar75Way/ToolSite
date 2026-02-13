@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { tools, categories } from '@/data/tools'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://toolsite.com' // Replace with actual domain when deployed
+    const baseUrl = 'https://tool4you.com' // Replace with actual domain when deployed
 
     // Static routes
     const routes = [

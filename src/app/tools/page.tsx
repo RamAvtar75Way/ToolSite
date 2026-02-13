@@ -3,7 +3,7 @@ import { ToolCard } from "@/components/tools/ToolCard";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "All Tools - Multi-Domain Tool Site",
+    title: "All Tools - Tool4You",
     description: "Browse our collection of free online tools.",
 };
 

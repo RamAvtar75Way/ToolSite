@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Categories - Multi-Domain Tool Site",
+    title: "Categories - Tool4You",
     description: "Browse tools by category.",
 };
 

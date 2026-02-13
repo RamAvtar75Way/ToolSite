@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Terms of Service - Multi-Domain Tool Site",
+    title: "Terms of Service - Tool4You",
     description: "Read our terms of service regarding the use of our tools.",
 };
 
@@ -22,7 +22,7 @@ export default function TermsPage() {
 
                     <h2>2. Use License</h2>
                     <p>
-                        Permission is granted to temporarily download one copy of the materials (information or software) on Multi-Domain Tool Site for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title.
+                        Permission is granted to temporarily download one copy of the materials (information or software) on Tool4You for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title.
                     </p>
 
                     <h2>3. Disclaimer</h2>

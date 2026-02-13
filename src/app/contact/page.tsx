@@ -3,7 +3,7 @@ import { Button, Input, Textarea, Label } from "@/components/ui";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Contact Us - Multi-Domain Tool Site",
+    title: "Contact Us - Tool4You",
     description: "Get in touch with us for feedback, support, or suggestions.",
 };
 
@@ -29,7 +29,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <div className="font-medium">Email</div>
-                                        <div className="text-muted-foreground">support@toolsite.com</div>
+                                        <div className="text-muted-foreground">ramavtar.crb@gmail.com</div>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">

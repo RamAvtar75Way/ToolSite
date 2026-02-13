@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -45,7 +46,8 @@ export function Header() {
             <div className="container flex h-14 items-center mx-auto">
                 <div className="mr-4 hidden md:flex">
                     <Link href="/" className="mr-6 flex items-center space-x-2">
-                        <span className="hidden font-bold sm:inline-block">ToolsSite</span>
+                        <Image src="/logo.png" alt="Tool4You Logo" width={180} height={180} className="rounded-sm" />
+                        {/* <span className="hidden font-bold sm:inline-block">Tool4You</span> */}
                     </Link>
                     <nav className="flex items-center space-x-6 text-sm font-medium">
                         <Link
