@@ -6,6 +6,7 @@ import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect, Suspense } from "react";
+import { useTheme } from "next-themes";
 import { ModeToggle } from "@/components/mode-toggle";
 
 function SearchBar() {
@@ -41,12 +42,29 @@ function SearchBar() {
 }
 
 export function Header() {
+    const { theme, resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const logoSrc = mounted && resolvedTheme === "dark" ? "/logowhite.png" : "/logo.png";
+
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
             <div className="container flex h-14 items-center mx-auto">
                 <div className="mr-4 hidden md:flex">
                     <Link href="/" className="mr-6 flex items-center space-x-2">
-                        <Image src="/logo.png" alt="Tool4You Logo" width={180} height={180} className="rounded-sm" />
+                        <Image
+                            key={logoSrc}
+                            src={logoSrc}
+                            alt="Tool4You Logo"
+                            width={180}
+                            height={180}
+                            className="rounded-sm"
+                            priority
+                        />
                         {/* <span className="hidden font-bold sm:inline-block">Tool4You</span> */}
                     </Link>
                     <nav className="flex items-center space-x-6 text-sm font-medium">
