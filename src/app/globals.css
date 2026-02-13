@@ -79,4 +79,11 @@
   body {
     @apply bg-background text-foreground;
   }
+
+}
+
+@layer utilities {
+  .container {
+    @apply px-4 mx-auto;
+  }
 }
