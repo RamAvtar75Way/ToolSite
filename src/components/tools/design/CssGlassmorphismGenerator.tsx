@@ -100,7 +100,7 @@ border-radius: 12px;`;
                         <Label>CSS Code</Label>
                         <div className="relative">
                             <textarea
-                                className="w-full h-32 p-4 font-mono text-sm bg-muted rounded-md resize-none focus:outline-none ring-1 ring-border"
+                                className="w-full h-32 p-4 pr-20 font-mono text-sm bg-muted rounded-md resize-none focus:outline-none ring-1 ring-border"
                                 readOnly
                                 value={code}
                             />

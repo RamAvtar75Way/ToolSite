@@ -52,7 +52,7 @@ export function CssClipPathGenerator() {
                     <div className="space-y-2">
                         <Label>CSS Code</Label>
                         <div className="relative">
-                            <code className="block p-4 bg-muted rounded-md text-sm font-mono break-all">
+                            <code className="block p-4 pr-16 bg-muted rounded-md text-sm font-mono break-all">
                                 {code}
                             </code>
                             <Button

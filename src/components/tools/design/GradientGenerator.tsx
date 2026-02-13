@@ -142,7 +142,7 @@ export function GradientGenerator() {
                     <Label>CSS Code</Label>
                     <div className="relative">
                         <textarea
-                            className="w-full h-full min-h-[200px] p-4 font-mono text-sm bg-muted rounded-md resize-none focus:outline-none ring-1 ring-border"
+                            className="w-full h-full min-h-[200px] p-4 pr-24 font-mono text-sm bg-muted rounded-md resize-none focus:outline-none ring-1 ring-border"
                             readOnly
                             value={`background: ${cssValue};`}
                         />
