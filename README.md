@@ -1,6 +1,6 @@
 # Tool4You 🛠️
 
-![Tool4You Logo](/public/logo.png)
+![Tool4You Logo](/public/logowhite.png)
 
 > **Tool4You** is a comprehensive collection of free, privacy-focused online tools for developers, students, and creative professionals. Built with performance and user experience in mind.
 
