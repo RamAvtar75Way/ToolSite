@@ -10,8 +10,31 @@ import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Multi-Domain Tool Site",
-  description: "A collection of 40+ free online tools for developers, students, and more.",
+  title: {
+    default: "Multi-Domain Tool Site",
+    template: "%s | Multi-Domain Tool Site",
+  },
+  description: "A collection of 40+ free online tools for developers, students, and more. No ads, no tracking, just tools.",
+  keywords: ["online tools", "developer tools", "text tools", "image tools", "calculators", "free tools"],
+  authors: [{ name: "ToolSite Team" }],
+  creator: "ToolSite Team",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://toolsite.com",
+    title: "Multi-Domain Tool Site",
+    description: "A collection of 40+ free online tools for developers, students, and more.",
+    siteName: "Multi-Domain Tool Site",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Multi-Domain Tool Site",
+    description: "A collection of 40+ free online tools for developers, students, and more.",
+    creator: "@toolsite",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
